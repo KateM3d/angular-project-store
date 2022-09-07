@@ -1,3 +1,5 @@
+<app-global-error>
+</app-global-error>
 <div class="max-w-2xl container mx-auto pt-5">
     <h1 class="font-bold mb-2 text-center text-lg">
         {{title | titlecase}}
@@ -8,6 +10,5 @@
     <!-- <app-product *ngFor="let product of products; let i=index" [product]="product"></app-product> -->
 
     <app-product *ngFor="let product of products$ | async; let i=index" [product]="product"></app-product>
-
 
 </div>
