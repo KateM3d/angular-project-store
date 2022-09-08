@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   // products: Product[] = [];
   loading: boolean = false;
   products$: Observable<Product[]> | undefined;
+  term = '';
 
   constructor(private productsService: ProductService) {}
   ngOnInit(): void {
