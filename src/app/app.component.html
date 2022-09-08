@@ -13,5 +13,7 @@
 
         <app-product *ngFor="let product of products | filterProducts: term; let i=index" [product]="product"></app-product>
     </div>
-
+    <app-modal [title]="'Create new product'">
+        <app-create-product></app-create-product>
+    </app-modal>
 </div>
