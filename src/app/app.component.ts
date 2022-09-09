@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './models/product';
 // import { products as data } from './data/products';
-import { ProductService } from './services/products.service';
+import { ProductsService } from './services/products.service';
 import { Observable, tap } from 'rxjs';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
   products$: Observable<Product[]> | undefined;
   term = '';
 
-  constructor(private productsService: ProductService) {}
+  constructor(
+    private productsService: ProductsService,
+    public modalService: ModalService
+  ) {}
   ngOnInit(): void {
     this.loading = true;
     this.products$ = this.productsService.getAll().pipe(
